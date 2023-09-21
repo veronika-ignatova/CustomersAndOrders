@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataBase.Constants
+namespace DataBase
 {
-    internal class User
+    public class OrderItems
     {
+        public int OrderId { get; set; }
+        public int ItemId { get; set; }
     }
 }
