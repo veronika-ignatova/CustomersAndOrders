@@ -1,4 +1,5 @@
 ﻿using CustomersAndOrders.OrderFolder;
+using CustomersAndOrders.OrderFolder.OrderInterface;
 using CustomersAndOrders.UserFolder;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ namespace DataBase.Constants
 {
     internal partial class MyDbContext
     {
-        public static IEnumerable<Discount> Discounts = new List<Discount>
-        {          
+        public static IEnumerable<IDiscount> Discounts = new List<IDiscount>
+        {
             new Discount()
             {
                 Id = 1,
@@ -19,7 +20,7 @@ namespace DataBase.Constants
                 Name = "Discount2",
                 Description = "Discount2 with 20%",
                 Value = 10
-            },            
+            },
             new Discount()
             {
                 Id = 2,
@@ -27,7 +28,7 @@ namespace DataBase.Constants
                 Name = "Discount3",
                 Description = "Discount3 with 30%",
                 Value = 20
-            },            
+            },
             new Discount()
             {
                 Id = 3,
@@ -35,7 +36,7 @@ namespace DataBase.Constants
                 Name = "Discount4",
                 Description = "Discount4 with 40%",
                 Value = 40
-            },            
+            },
             new Discount()
             {
                 Id = 4,

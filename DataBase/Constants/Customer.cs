@@ -9,7 +9,7 @@ namespace DataBase.Constants
 {
     internal partial class MyDbContext
     {
-        public static IEnumerable<Customer> Customers = new List<Customer>
+        public static IEnumerable<ICustomer> Customers = new List<ICustomer>
         {
             new Customer()
             {

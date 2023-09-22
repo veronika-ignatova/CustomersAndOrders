@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomersAndOrders.UserFolder
 {
-    interface ICustomer
+    public interface ICustomer
     {
         int Id { get; set; }
         string FirstName { get; set; }

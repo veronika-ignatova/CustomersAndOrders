@@ -1,13 +1,12 @@
-﻿using CustomersAndOrders.OrderFolder.OrderInterface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomersAndOrders.OrderFolder
+namespace CustomersAndOrders.OrderFolder.OrderInterface
 {
-    public class Discount : IDiscount
+    public interface IDiscount
     {
         public int Id { get; set; }
         public string Name { get; set; }

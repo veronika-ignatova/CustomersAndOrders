@@ -1,4 +1,5 @@
 ﻿using CustomersAndOrders.OrderFolder;
+using CustomersAndOrders.OrderFolder.OrderInterface;
 using CustomersAndOrders.UserFolder;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace DataBase.Constants
 {
     internal partial class MyDbContext
     {
-        public static IEnumerable<Order> Orders = new List<Order>
+        public static IEnumerable<IOrder> Orders = new List<IOrder>
         {
             new Order 
             {
