@@ -11,7 +11,7 @@ namespace CustomersAndOrders.OrderFolder.OrderInterface
     {
         int Id { get; set; }
         int CustomerId { get; set; }
-        Customer Customer { get; set; }
+        ICustomer Customer { get; set; }
         string Name { get; set; }
         string Description { get; set; }
         string OrderStatus { get; set; }

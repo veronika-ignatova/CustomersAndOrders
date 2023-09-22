@@ -11,7 +11,7 @@ namespace DataBase
             var order = GetPrivateOrderById(id);
             if (order != null)
             {
-                order.Customer = (Customer)GetPrivateCustomerById(order.CustomerId);
+                order.Customer = GetPrivateCustomerById(order.CustomerId);
             }
             return order;
         }
