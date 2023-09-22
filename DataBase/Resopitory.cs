@@ -80,7 +80,7 @@ namespace DataBase
                     {
                         foreach (var it in items)
                         {
-                            if (item.OrderId == it.Id)
+                            if (item.ItemId == it.Id)
                             {
                                 resItems.Add(it);
                             }
@@ -92,5 +92,37 @@ namespace DataBase
             }
             return null;
         }
+
+        public ICustomer GetCustomerWithOrderById(int id)
+        {
+            var customers = MyDbContext.Customers;
+            ICustomer result = null;
+            foreach (var customer in customers)
+            {
+                if (customer.Id == id)
+                {
+                    result = customer;
+                }
+            }
+            if (result != null)
+            {
+                var orders = MyDbContext.Orders;
+
+                List<IOrder> resOrders = new List<IOrder>();
+
+                foreach (var order in orders)
+                {
+                    if (order.CustomerId == result.Id)
+                    {
+                        resOrders.Add(order); 
+                    }
+                }
+                result.Orders = resOrders;
+                return result;
+            }
+            return null;
+        }
+
+
     }
 }

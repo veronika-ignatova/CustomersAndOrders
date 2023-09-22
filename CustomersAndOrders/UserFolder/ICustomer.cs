@@ -1,4 +1,5 @@
 ﻿using CustomersAndOrders.OrderFolder;
+using CustomersAndOrders.OrderFolder.OrderInterface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,6 @@ namespace CustomersAndOrders.UserFolder
         UserType UserType { get; }
         DateTime Birthday { get; set; }
         DateTime DateOfRegistration { get; set; }
-        List<Order> Orders { get; set; }
+        List<IOrder> Orders { get; set; }
     }
 }

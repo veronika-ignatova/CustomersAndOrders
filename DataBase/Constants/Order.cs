@@ -24,7 +24,7 @@ namespace DataBase.Constants
             new Order
             {
                 Id = 2,
-                CustomerId = 2,
+                CustomerId = 1,
                 Name = "Order2",
                 Description = "Order2 for customer 2",
                 OrderStatus = "ariving tomorrow"

@@ -1,4 +1,5 @@
-﻿using CustomersAndOrders.UserFolder;
+﻿using CustomersAndOrders.OrderFolder.OrderInterface;
+using CustomersAndOrders.UserFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,8 @@ namespace CustomersAndOrders.OrderFolder
         public string Name { get; set; }
         public string Description { get; set; }
         public string OrderStatus { get; set; }
-        public List<Item> Items { get; set; }
-        public List<Discount> Discounts { get; set; }
+        public List<IItem> Items { get; set; }
+        public List<IDiscount> Discounts { get; set; }
         public double TotalPrice { get; }
     }
 }
