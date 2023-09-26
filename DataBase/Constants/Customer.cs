@@ -17,7 +17,7 @@ namespace DataBase.Constants
                 FirstName = "Veronika",
                 LastName = "Ihnatova",
                 DateOfRegistration = DateTime.Now.AddDays(-1),
-                Birthday = new DateTime(2000,12,1),
+                Birthday = new DateTime(2000,09,26),
                 Email = "email@gmail.com",
                 Password = "password",
                 UserName = "nickname"
@@ -43,6 +43,28 @@ namespace DataBase.Constants
                 Email = "kateryna@gmail.com",
                 Password = "myPass",
                 UserName = "Kateryna1990"
+            },
+            new Customer()
+            {
+                Id = 4,
+                FirstName = "Anya",
+                LastName = "Kryk",
+                DateOfRegistration = DateTime.Now.AddDays(-101),
+                Birthday = new DateTime(1991,3,1),
+                Email = "kryk123@gmail.com",
+                Password = "123456",
+                UserName = "anyakryk"
+            },
+            new Customer()
+            {
+                Id = 5,
+                FirstName = "Oleksa",
+                LastName = "Gryniv",
+                DateOfRegistration = DateTime.Now.AddDays(-5),
+                Birthday = new DateTime(2000,8,10),
+                Email = "gryniv2000@gmail.com",
+                Password = "gryniv",
+                UserName = "oleksa123"
             }
         };
     }

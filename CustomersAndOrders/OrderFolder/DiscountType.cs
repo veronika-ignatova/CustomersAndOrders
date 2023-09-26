@@ -9,6 +9,7 @@ namespace CustomersAndOrders.OrderFolder
     public enum DiscountType
     {
         None,
+        OrderPrice,
         Birthday,
         Holiday
     }

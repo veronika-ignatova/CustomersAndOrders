@@ -13,5 +13,6 @@ namespace CustomersAndOrders.UserFolder
         {
             UserType = UserType.Customer;
         }
+
     }
 }

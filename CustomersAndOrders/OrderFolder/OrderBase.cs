@@ -12,6 +12,7 @@ namespace CustomersAndOrders.OrderFolder
     {
         public int Id { get; set; }
         public int CustomerId { get; set; }
+        public int DeliveryId { get; set; }
         public ICustomer Customer { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

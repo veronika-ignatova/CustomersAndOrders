@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomersAndOrders", "Custo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "DataBase\DataBase.csproj", "{CF1EE3EF-84D1-4173-8C83-E2662F947FB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramMain", "ProgramMain\ProgramMain.csproj", "{73BAB136-6CD3-4024-BF87-53F0FCDC3980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramMain", "ProgramMain\ProgramMain.csproj", "{73BAB136-6CD3-4024-BF87-53F0FCDC3980}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{EFC45A75-009C-47C9-A0E1-23A157AE4078}"
+	ProjectSection(ProjectDependencies) = postProject
+		{333A68B3-80DA-4BD0-B786-8DBD548E0ED6} = {333A68B3-80DA-4BD0-B786-8DBD548E0ED6}
+		{CF1EE3EF-84D1-4173-8C83-E2662F947FB2} = {CF1EE3EF-84D1-4173-8C83-E2662F947FB2}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,10 @@ Global
 		{73BAB136-6CD3-4024-BF87-53F0FCDC3980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73BAB136-6CD3-4024-BF87-53F0FCDC3980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73BAB136-6CD3-4024-BF87-53F0FCDC3980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFC45A75-009C-47C9-A0E1-23A157AE4078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC45A75-009C-47C9-A0E1-23A157AE4078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC45A75-009C-47C9-A0E1-23A157AE4078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFC45A75-009C-47C9-A0E1-23A157AE4078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

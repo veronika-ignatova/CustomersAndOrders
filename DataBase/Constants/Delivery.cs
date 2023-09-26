@@ -22,13 +22,13 @@ namespace DataBase.Constants
             new Devilery()
             {
                 Id = 2,
-                DeliveryCompany = DeliveryCompany.NovaPosta,
+                DeliveryCompany = DeliveryCompany.UkrPosta,
                 Price = 50
             },
             new Devilery()
             {
                 Id = 3,
-                DeliveryCompany = DeliveryCompany.NovaPosta,
+                DeliveryCompany = DeliveryCompany.Meets,
                 Price = 75
             }
         };
