@@ -15,6 +15,7 @@ namespace DataBase
             if (order != null)
             {
                 order.Customer = GetPrivateCustomerById(order.CustomerId);
+                //order.Items = GetPrivateItemsById(order.Id);
             }
             return order;
         }
@@ -49,7 +50,7 @@ namespace DataBase
             return null;
         }
 
-        private List<IDiscount> GetAllDiscount()
+        public List<IDiscount> GetAllDiscount()
         {
             var discounts = MyDbContext.Discounts;
             var results = new List<IDiscount>();
@@ -71,53 +72,52 @@ namespace DataBase
             return results;
         }
 
-        public List<IDiscount> GetDiscountsForOrderId(int id)
+        public void GetDiscountsForOrder(IOrder order)
         {
-            var order = GetOrderWithItemsById(id);
-            var customer = GetCustomerByOrderId(id);
-            var discounts = MyDbContext.Discounts;
-            var price = GetPriceByOrderId(id);
+            var customer = GetCustomerByOrderId(order.Id);
+            var price = GetPriceByOrderId(order.Id);
             var discountList = GetAllDiscount();
+            var result = new List<IDiscount>();
 
-            foreach (var discount in discounts)
+            foreach (var discount in discountList)
             {
-                if (!((discount.DiscountType == DiscountType.Birthday && DateTime.Now.Day == customer.Birthday.Day && DateTime.Now.Month == customer.Birthday.Month)|| (discount.DiscountType == DiscountType.OrderPrice && price > 5000)))
+                switch (discount.DiscountType)
                 {
-                    discountList.Remove(discount);
+                    case DiscountType.OrderPrice:
+                        if (discount.Value.HasValue && discount.Value <= price) result.Add(discount);
+                        break;
+                    case DiscountType.Birthday:
+                        if (DateTime.Now.Day == customer.Birthday.Day && DateTime.Now.Month == customer.Birthday.Month) result.Add(discount);
+                        break;
+                    case DiscountType.Holiday:
+                        result.Add(discount);
+                        break;
+                    default:
+                        break;
                 }
-
-                //if (!(discount.DiscountType == DiscountType.OrderPrice && price > 5000))
-                //{
-                //    discountList.Remove(discount);
-                //}
-
             }
-            return discountList;
+            order.Discounts = result;
         }
 
-        public double GetTotalPriceInOrder(int id)
+        public void GetTotalPriceInOrder(IOrder order)
         {
-            var orders = MyDbContext.Orders;
-            var discounts = GetDiscountsForOrderId(id);
-            double maxDiscount = 100;
-            foreach (var discount in discounts)
+            int maxDiscount = 0;
+            if (order.Discounts != null && order.Discounts.Count > 0)
             {
-                if (discount.Value < maxDiscount)
+                foreach (var discount in order.Discounts)
                 {
-                    maxDiscount = discount.Value;
+                    maxDiscount += discount.Amount;
                 }
             }
-            var price = GetPriceByOrderId(id);
-            return price - (price * maxDiscount / 100);
+            var price = GetPriceByOrderId(order.Id);
+            order.TotalPrice = price - (price * maxDiscount / 100);
         }
 
         public double GetTotalWithDelivery(int id)
         {
-            var orders = MyDbContext.Orders;
             var deliveries = MyDbContext.Deliveries;
-            var totalPrice = GetTotalPriceInOrder(id);
-            var customer = GetPrivateCustomerByOrderId(id);
             var order = GetPrivateOrderById(id);
+            GetTotalPriceInOrder(order);
             double deliveryPrice = 0;
             foreach (var delivery in deliveries)
             {
@@ -126,7 +126,7 @@ namespace DataBase
                     deliveryPrice = delivery.Price;
                 }
             }
-            return totalPrice + deliveryPrice;
+            return order.TotalPrice + deliveryPrice;
         }
 
         public double GetPriceByOrderId(int id)

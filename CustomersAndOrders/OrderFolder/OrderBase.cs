@@ -19,6 +19,6 @@ namespace CustomersAndOrders.OrderFolder
         public string OrderStatus { get; set; }
         public List<IItem> Items { get; set; }
         public List<IDiscount> Discounts { get; set; }
-        public double TotalPrice { get; }
+        public double TotalPrice { get; set; }
     }
 }

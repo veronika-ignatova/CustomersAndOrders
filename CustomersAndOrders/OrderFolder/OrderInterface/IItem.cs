@@ -16,6 +16,6 @@ namespace CustomersAndOrders.OrderFolder.OrderInterface
         string Description { get; set; }
         ItemSize Size { get; set; }
         double Price { get; set; }
-        Discount Discount { get; set; }
+        IDiscount Discount { get; set; }
     }
 }

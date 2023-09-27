@@ -12,7 +12,8 @@ namespace CustomersAndOrders.OrderFolder
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public double Value { get; set; }
+        public int Amount { get; set; }
+        public double? Value { get; set; }
         public DiscountType DiscountType { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomersAndOrders.OrderFolder.OrderInterface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace CustomersAndOrders.OrderFolder
         public string Description { get; set; }
         public ItemSize Size { get; set; }
         public double Price { get; set; }
-        public Discount Discount { get; set; }
+        public IDiscount Discount { get; set; }
 
     }
 }

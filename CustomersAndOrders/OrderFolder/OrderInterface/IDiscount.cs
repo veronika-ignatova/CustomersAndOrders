@@ -8,12 +8,13 @@ namespace CustomersAndOrders.OrderFolder.OrderInterface
 {
     public interface IDiscount
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public double Value { get; set; }
-        public DiscountType DiscountType { get; set; }
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
+        int Id { get; set; }
+        string Name { get; set; }
+        string Description { get; set; }
+        int Amount { get; set; }
+        double? Value { get; set; }
+        DiscountType DiscountType { get; set; }
+        DateTime? StartDate { get; set; }
+        DateTime? EndDate { get; set; }
     }
 }

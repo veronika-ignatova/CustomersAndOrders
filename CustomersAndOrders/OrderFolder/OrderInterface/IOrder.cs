@@ -18,6 +18,6 @@ namespace CustomersAndOrders.OrderFolder.OrderInterface
         string OrderStatus { get; set; }
         List<IItem> Items { get; set; }
         List<IDiscount> Discounts { get; set; }
-        double TotalPrice { get; }
+        double TotalPrice { get; set; }
     }
 }

@@ -18,6 +18,11 @@ namespace Service
         {
             return _repository.GetOrderWithItemsById(id);
         }
+        //public void SetDiscount(IOrder order)
+        //{
 
+        //}
+
+        
     }
 }

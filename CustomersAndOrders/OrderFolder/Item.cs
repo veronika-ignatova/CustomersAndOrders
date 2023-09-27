@@ -9,9 +9,5 @@ namespace CustomersAndOrders.OrderFolder
 {
     public class Item : ItemBase, IItem
     {
-        //public double GetItemPrice(Item item)
-        //{
-        //    return item.Price  - item.Price * item.Discount.SetDiscountForItem(item)/100;
-        //}
     }
 }
