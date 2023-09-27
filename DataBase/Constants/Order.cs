@@ -1,11 +1,5 @@
-﻿using CustomersAndOrders.OrderFolder;
-using CustomersAndOrders.OrderFolder.OrderInterface;
-using CustomersAndOrders.UserFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Interfaces;
+using Core.Model;
 
 namespace DataBase.Constants
 {

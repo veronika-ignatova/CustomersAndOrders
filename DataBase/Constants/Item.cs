@@ -1,11 +1,5 @@
-﻿using CustomersAndOrders.OrderFolder;
-using CustomersAndOrders.OrderFolder.OrderInterface;
-using CustomersAndOrders.UserFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Interfaces;
+using Core.Model;
 
 namespace DataBase.Constants
 {
@@ -18,8 +12,7 @@ namespace DataBase.Constants
                 Id = 1,
                 Name = "Book",
                 Description = "Book about cats",
-                Price = 100,
-                DiscountId = 4
+                Price = 100
             },
             new Item()
             {
@@ -27,7 +20,6 @@ namespace DataBase.Constants
                 Name = "Laptop",
                 Description = "Cool laptop",
                 Price = 1000,
-                DiscountId = 2
             },
             new Item()
             {
@@ -35,7 +27,6 @@ namespace DataBase.Constants
                 Name = "Computer",
                 Description = "New computer",
                 Price = 150,
-                DiscountId = 3
             },            
             new Item()
             {
@@ -43,7 +34,6 @@ namespace DataBase.Constants
                 Name = "Mouse",
                 Description = "Small mouse",
                 Price = 25,
-                DiscountId = 1
             },            
             new Item()
             {
@@ -51,7 +41,6 @@ namespace DataBase.Constants
                 Name = "Keyboard",
                 Description = "Hot-swap keyboard",
                 Price = 199,
-                DiscountId = 2
             }
         };
     }

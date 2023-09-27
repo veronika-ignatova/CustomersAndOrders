@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomersAndOrders", "CustomersAndOrders\CustomersAndOrders.csproj", "{333A68B3-80DA-4BD0-B786-8DBD548E0ED6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "CustomersAndOrders\Core.csproj", "{333A68B3-80DA-4BD0-B786-8DBD548E0ED6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "DataBase\DataBase.csproj", "{CF1EE3EF-84D1-4173-8C83-E2662F947FB2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramMain", "ProgramMain\ProgramMain.csproj", "{73BAB136-6CD3-4024-BF87-53F0FCDC3980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{EFC45A75-009C-47C9-A0E1-23A157AE4078}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{EFC45A75-009C-47C9-A0E1-23A157AE4078}"
 	ProjectSection(ProjectDependencies) = postProject
 		{333A68B3-80DA-4BD0-B786-8DBD548E0ED6} = {333A68B3-80DA-4BD0-B786-8DBD548E0ED6}
 		{CF1EE3EF-84D1-4173-8C83-E2662F947FB2} = {CF1EE3EF-84D1-4173-8C83-E2662F947FB2}

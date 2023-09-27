@@ -1,20 +1,21 @@
-﻿using System;
+﻿using Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomersAndOrders.OrderFolder.OrderInterface
+namespace Core.Interfaces
 {
     public interface IDiscount
     {
         int Id { get; set; }
         string Name { get; set; }
+        public DiscountType DiscountType { get;}
         string Description { get; set; }
-        int Amount { get; set; }
-        double? Value { get; set; }
-        DiscountType DiscountType { get; set; }
+        int Value { get; set; }
         DateTime? StartDate { get; set; }
         DateTime? EndDate { get; set; }
+        abstract void SetDiscount(IOrder order);
     }
 }

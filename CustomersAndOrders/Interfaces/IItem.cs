@@ -1,21 +1,20 @@
-﻿using System;
+﻿using Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomersAndOrders.OrderFolder.OrderInterface
+namespace Core.Interfaces
 {
     public interface IItem
     {
-        //public double GetItemPrice(Item item);
         int Id { get; set; }
-        public int DiscountId { get; set; }
         string Name { get; set; }
         string Description { get; set; }
         ItemSize Size { get; set; }
         double Price { get; set; }
-        IDiscount Discount { get; set; }
+        List<IDiscount> Discounts { get; set; }
     }
 }

@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomersAndOrders.UserFolder
+namespace Core.Interfaces
 {
-    public enum UserType
+    public interface IShipping
     {
-        Customer,
-        Manager,
-        Admin
+        public double CountShippingPrice();
     }
 }

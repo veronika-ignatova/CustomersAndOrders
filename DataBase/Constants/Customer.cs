@@ -1,9 +1,5 @@
-﻿using CustomersAndOrders.UserFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Interfaces;
+using Core.Model;
 
 namespace DataBase.Constants
 {
@@ -17,7 +13,7 @@ namespace DataBase.Constants
                 FirstName = "Veronika",
                 LastName = "Ihnatova",
                 DateOfRegistration = DateTime.Now.AddDays(-1),
-                Birthday = new DateTime(2000,09,26),
+                Birthday = new DateTime(2000,09,27),
                 Email = "email@gmail.com",
                 Password = "password",
                 UserName = "nickname"

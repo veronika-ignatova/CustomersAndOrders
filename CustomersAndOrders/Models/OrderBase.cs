@@ -1,14 +1,7 @@
-﻿using CustomersAndOrders.OrderFolder.OrderInterface;
-using CustomersAndOrders.UserFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CustomersAndOrders.OrderFolder
+﻿using Core.Interfaces;
+namespace Core.Model
 {
-    public abstract class OrderBase
+    public abstract class OrderBase: IOrder
     {
         public int Id { get; set; }
         public int CustomerId { get; set; }
@@ -20,5 +13,6 @@ namespace CustomersAndOrders.OrderFolder
         public List<IItem> Items { get; set; }
         public List<IDiscount> Discounts { get; set; }
         public double TotalPrice { get; set; }
+        public IDelivery Delivery { get; set; }
     }
 }

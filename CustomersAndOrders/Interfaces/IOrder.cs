@@ -1,11 +1,5 @@
-﻿using CustomersAndOrders.UserFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CustomersAndOrders.OrderFolder.OrderInterface
+﻿
+namespace Core.Interfaces
 {
     public interface IOrder
     {
@@ -13,6 +7,7 @@ namespace CustomersAndOrders.OrderFolder.OrderInterface
         int CustomerId { get; set; }
         int DeliveryId { get; set; }
         ICustomer Customer { get; set; }
+        IDelivery Delivery { get; set; }
         string Name { get; set; }
         string Description { get; set; }
         string OrderStatus { get; set; }

@@ -1,12 +1,6 @@
-﻿using CustomersAndOrders.OrderFolder;
-using CustomersAndOrders.OrderFolder.OrderInterface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CustomersAndOrders.UserFolder
+﻿using Core.Enums;
+using Core.Interfaces;
+namespace Core.Model
 {
     public abstract class UserBase
     {
