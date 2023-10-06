@@ -6,7 +6,7 @@ namespace DataBase.Constants
 {
     internal partial class MyDbContext
     {
-        public static IEnumerable<IDiscount> Discounts = new List<IDiscount>
+        public static IEnumerable<IDiscount<int>> Discounts = new List<IDiscount<int>>
         {
             new DiscountBirthday()
             {

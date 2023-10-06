@@ -14,7 +14,7 @@ namespace Core.Model.Discount
         {
             if (order != null)
             {
-                if (order.Discounts == null) order.Discounts = new List<IDiscount>();
+                if (order.Discounts == null) order.Discounts = new List<IDiscount<int>>();
                 if (DateTime.Now.Day == order.Customer?.Birthday.Day
                     && DateTime.Now.Month == order.Customer?.Birthday.Month)
                     order.Discounts.Add(this);

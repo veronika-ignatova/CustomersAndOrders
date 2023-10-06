@@ -10,6 +10,6 @@ namespace Core.Model
         public string Description { get; set; }
         public ItemSize Size { get; set; }
         public double Price { get; set; }
-        public List<IDiscount> Discounts { get; set; }
+        public List<IDiscount<int>> Discounts { get; set; }
     }
 }

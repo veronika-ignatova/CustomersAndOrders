@@ -15,6 +15,6 @@ namespace Core.Interfaces
         string Description { get; set; }
         ItemSize Size { get; set; }
         double Price { get; set; }
-        List<IDiscount> Discounts { get; set; }
+        List<IDiscount<int>> Discounts { get; set; }
     }
 }

@@ -15,9 +15,30 @@ namespace DataBase
                 order.Customer = GetCustomerWithOrderById(order.CustomerId);
                 order.Items = GetPrivateItemsByOrderId(order.Id);
                 order.Delivery = GetPrivateDeliveryById(order.DeliveryId);
-                order.Discounts = new List<IDiscount>();
+                order.Discounts = new List<IDiscount<int>>();
             }
             return order;
+        }
+
+        public IItem GetItemById(int id)
+        {
+            var items = MyDbContext.Items;
+            foreach (var item in items)
+            {
+                if (item.Id == id)
+                {
+                    return new Item()
+                    {
+                        Id = item.Id,
+                        Description = item.Description,
+                        Discounts = new List<IDiscount<int>>(),
+                        Name = item.Name,
+                        Price = item.Price,
+                        Size = item.Size
+                    };
+                }
+            }
+            return null;
         }
 
         private List<IItem> GetPrivateItemsByOrderId(int orderId)
@@ -38,7 +59,7 @@ namespace DataBase
                             {
                                 Id = item.Id,
                                 Description = item.Description,
-                                Discounts = new List<IDiscount>(),
+                                Discounts = new List<IDiscount<int>>(),
                                 Name = item.Name,
                                 Price = item.Price,
                                 Size = item.Size
@@ -80,10 +101,10 @@ namespace DataBase
             return null;
         }
 
-        public List<IDiscount> GetAllDiscount()
+        public List<IDiscount<int>> GetAllDiscount()
         {
             var discounts = MyDbContext.Discounts;
-            var results = new List<IDiscount>();
+            var results = new List<IDiscount<int>>();
 
             foreach (var discount in discounts)
             {

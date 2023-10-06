@@ -1,8 +1,11 @@
 ﻿
+using Core.Model;
+
 namespace Core.Interfaces
 {
     public interface IOrder
     {
+        event AddingItem? AddItem;
         int Id { get; set; }
         int CustomerId { get; set; }
         int DeliveryId { get; set; }
@@ -12,7 +15,8 @@ namespace Core.Interfaces
         string Description { get; set; }
         string OrderStatus { get; set; }
         List<IItem> Items { get; set; }
-        List<IDiscount> Discounts { get; set; }
+        List<IDiscount<int>> Discounts { get; set; }
         double TotalPrice { get; set; }
+        void AddNewItem(IItem item);
     }
 }

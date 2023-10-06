@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Core.Interfaces
 {
-    public interface IDiscount
+    public interface IDiscount<T>
     {
-        int Id { get; set; }
+        T Id { get; set; }
         string Name { get; set; }
         public DiscountType DiscountType { get;}
         string Description { get; set; }

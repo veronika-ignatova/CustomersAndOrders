@@ -4,7 +4,7 @@ using Core.Interfaces;
 
 namespace Core.Model.Discount
 {
-    public abstract class DiscountBase: IDiscount
+    public abstract class DiscountBase: IDiscount<int>
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,7 +17,7 @@ namespace Core.Model.Discount
         {
             if (order != null)
             {
-                if (order.Discounts == null) order.Discounts = new List<IDiscount>();
+                if (order.Discounts == null) order.Discounts = new List<IDiscount<int>>();
                 order.Discounts.Add(this);
             }
         }

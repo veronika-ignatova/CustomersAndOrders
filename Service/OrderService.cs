@@ -21,6 +21,11 @@ namespace Service
             return order;
         }
 
+        public IItem GetItemById(int id)
+        {
+            return _repository.GetItemById(id);
+        }
+
         private void GetDiscountsForOrder(IOrder order)
         {
             var discountList = _repository.GetAllDiscount();
