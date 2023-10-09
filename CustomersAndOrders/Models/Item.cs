@@ -11,5 +11,6 @@ namespace Core.Model
         public ItemSize Size { get; set; }
         public double Price { get; set; }
         public List<IDiscount<int>> Discounts { get; set; }
+
     }
 }
