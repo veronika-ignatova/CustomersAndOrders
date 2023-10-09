@@ -7,15 +7,16 @@ namespace DataBase.Constants
     {
         public static IEnumerable<IOrder> Orders = new List<IOrder>
         {
-            new Order 
+            new Order
             {
                 Id = 1,
                 CustomerId = 1,
                 DeliveryId = 1,
                 Name = "Order1",
                 Description = "Order1 for customer 1",
+                CreateOrder = new DateTime(2023, 10, 10),
                 OrderStatus = "done"
-            },            
+            },
             new Order
             {
                 Id = 2,
@@ -23,8 +24,9 @@ namespace DataBase.Constants
                 DeliveryId = 1,
                 Name = "Order2",
                 Description = "Order2 for customer 2",
+                CreateOrder = new DateTime(2023, 08, 10),
                 OrderStatus = "ariving tomorrow"
-            },            
+            },
             new Order
             {
                 Id = 3,
@@ -32,6 +34,7 @@ namespace DataBase.Constants
                 DeliveryId = 2,
                 Name = "Order3",
                 Description = "Order3 for customer 3",
+                CreateOrder = new DateTime(2023, 01, 11),
                 OrderStatus = "order created"
             },
             new Order
@@ -41,6 +44,7 @@ namespace DataBase.Constants
                 DeliveryId = 3,
                 Name = "Order4",
                 Description = "Order4 for customer 4",
+                CreateOrder = new DateTime(2023, 07, 10),
                 OrderStatus = "order created"
             },
             new Order
@@ -50,6 +54,7 @@ namespace DataBase.Constants
                 DeliveryId = 3,
                 Name = "Order5",
                 Description = "Order5 for customer 5",
+                CreateOrder = new DateTime(2023,01, 10),
                 OrderStatus = "order created"
             },
 

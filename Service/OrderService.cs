@@ -15,8 +15,9 @@ namespace Service
         public IOrder GetOrderById(int id)
         {
             var order = _repository.GetOrderById(id);
-            GetDiscountsForOrder(order);
-            ApplyAllDiscountsForOrder(order);
+            //GetDiscountsForOrder(order);
+            //ApplyAllDiscountsForOrder(order);
+            order.SetDiscounts(_repository.GetAllDiscount().OrderBy(x => x.IsOrderDiscount));
 
             return order;
         }
@@ -26,63 +27,63 @@ namespace Service
             return _repository.GetItemById(id);
         }
 
-        private void GetDiscountsForOrder(IOrder order)
-        {
-            var discountList = _repository.GetAllDiscount();
+        //private void GetDiscountsForOrder(IOrder order)
+        //{
+        //    var discountList = _repository.GetAllDiscount();
 
-            foreach (var discount in discountList)
-            {
-                discount.SetDiscount(order);
-            }
-        }
+        //    foreach (var discount in discountList)
+        //    {
+        //        discount.SetDiscount(order);
+        //    }
+        //}
 
-        private void ApplyAllDiscountsForOrder(IOrder order)
-        {
-            double orderPrice = 0;
-            if (order.Items != null && order.Items.Count > 0)
-            {
-                foreach (var item in order.Items)
-                {
-                    orderPrice += GetItemPrice(item);
-                }
-            }
+        //private void ApplyAllDiscountsForOrder(IOrder order)
+        //{
+        //    double orderPrice = 0;
+        //    if (order.Items != null && order.Items.Count > 0)
+        //    {
+        //        foreach (var item in order.Items)
+        //        {
+        //            orderPrice += GetItemPrice(item);
+        //        }
+        //    }
             
-            var dis = 0;
-            foreach (var discount in order.Discounts)
-            {
-                if (discount.DiscountType != DiscountType.OrderPrice && discount.Value > dis)
-                {
-                    dis = discount.Value;
-                }
-            }
-            orderPrice -= orderPrice * dis / 100;
+        //    var dis = 0;
+        //    foreach (var discount in order.Discounts)
+        //    {
+        //        if (discount.DiscountType != DiscountType.OrderPrice && discount.Amount > dis)
+        //        {
+        //            dis = discount.Amount;
+        //        }
+        //    }
+        //    orderPrice -= orderPrice * dis / 100;
 
-            dis = 0;
-            foreach(var discount in order.Discounts)
-            {
-                if (discount.DiscountType == DiscountType.OrderPrice && orderPrice >= ((DiscountOrderPrice)discount).MinPrice && dis < discount.Value)
-                {
-                    dis = discount.Value;
-                }
-            }
+        //    dis = 0;
+        //    foreach(var discount in order.Discounts)
+        //    {
+        //        if (discount.DiscountType == DiscountType.OrderPrice && orderPrice >= ((DiscountOrderPrice)discount).MinPrice && dis < discount.Amount)
+        //        {
+        //            dis = discount.Amount;
+        //        }
+        //    }
             
-            order.TotalPrice = orderPrice - (dis * orderPrice / 100);
-        }
+        //    order.TotalPrice = orderPrice - (dis * orderPrice / 100);
+        //}
 
-        private double GetItemPrice(IItem item)
-        {
-            var discountValue = 0;
+        //private double GetItemPrice(IItem item)
+        //{
+        //    var discountValue = 0;
 
-            if(item.Discounts != null && item.Discounts.Count > 0)
-            {
-                foreach (var discount in item.Discounts)
-                {
-                    discountValue += discount.Value;
-                }
-            }
+        //    if(item.Discounts != null && item.Discounts.Count > 0)
+        //    {
+        //        foreach (var discount in item.Discounts)
+        //        {
+        //            discountValue += discount.Amount;
+        //        }
+        //    }
 
-            return item.Price - discountValue * item.Price / 100;
-        }
+        //    return item.Price - discountValue * item.Price / 100;
+        //}
 
     }
 }

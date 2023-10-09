@@ -10,12 +10,16 @@ namespace Core.Interfaces
     public interface IDiscount<T>
     {
         T Id { get; set; }
-        string Name { get; set; }
-        public DiscountType DiscountType { get;}
         string Description { get; set; }
-        int Value { get; set; }
+        public DiscountType DiscountType { get;}
         DateTime? StartDate { get; set; }
         DateTime? EndDate { get; set; }
-        abstract void SetDiscount(IOrder order);
+        int Amount { get; set; }
+        string Name { get; set; }
+        bool IsOrderDiscount { get; set; }
+        bool IsAdditionalDiscount { get; set; }
+        bool IsApplyDiscountForOrder(IOrder order);
+        bool IsApplyDiscountForItem(IOrder order, IItem item);
+        //abstract void SetDiscount(IOrder order);
     }
 }

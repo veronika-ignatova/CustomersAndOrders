@@ -10,8 +10,8 @@ var orderService = new OrderService(rep);
 
 var order = orderService.GetOrderById(1);
 var order2 = orderService.GetOrderById(2);
-var order3 = orderService.GetOrderById(3);
-order.AddItem += Add;
+var order3 = orderService.GetOrderById(5);
+order3.AddItem += Add;
 
 var item = orderService.GetItemById(5);
 

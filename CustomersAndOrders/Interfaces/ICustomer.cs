@@ -9,6 +9,8 @@ namespace Core.Interfaces
 {
     public interface ICustomer
     {
+        List<IOrder> Orders { get; set; }
+        DateTime Birthday { get; set; }
         int Id { get; set; }
         string FirstName { get; set; }
         string LastName { get; set; }
@@ -17,8 +19,6 @@ namespace Core.Interfaces
         string UserName { get; set; }
         string Password { get; set; }
         UserType UserType { get; }
-        DateTime Birthday { get; set; }
         DateTime DateOfRegistration { get; set; }
-        List<IOrder> Orders { get; set; }
     }
 }

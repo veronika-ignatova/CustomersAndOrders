@@ -11,12 +11,15 @@ namespace Core.Interfaces
         int DeliveryId { get; set; }
         ICustomer Customer { get; set; }
         IDelivery Delivery { get; set; }
+        List<IItem> Items { get; set; }
+        double Price { get; }
+        double TotalPrice { get; }
+        DateTime CreateOrder {  get; set; }
+        List<IDiscount<int>> Discounts { get; set; }
         string Name { get; set; }
         string Description { get; set; }
         string OrderStatus { get; set; }
-        List<IItem> Items { get; set; }
-        List<IDiscount<int>> Discounts { get; set; }
-        double TotalPrice { get; set; }
+        void SetDiscounts(IEnumerable<IDiscount<int>> discounts);
         void AddNewItem(IItem item);
     }
 }

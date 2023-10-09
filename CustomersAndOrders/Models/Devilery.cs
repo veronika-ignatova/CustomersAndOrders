@@ -7,7 +7,7 @@ namespace Core.Model
     {
         public Devilery()
         {
-            DeliveryCompany = DeliveryCompany.NovaPosta;
+            //DeliveryCompany = DeliveryCompany.NovaPosta;
         }
     }
 }

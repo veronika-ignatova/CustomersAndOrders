@@ -1,4 +1,5 @@
 ﻿using Core;
+using Core.Enums;
 using Core.Interfaces;
 using Core.Model;
 using DataBase.Constants;
@@ -31,7 +32,7 @@ namespace DataBase
                     {
                         Id = item.Id,
                         Description = item.Description,
-                        Discounts = new List<IDiscount<int>>(),
+                        Discounts = new Dictionary<DiscountType, IDiscount<int>>(),
                         Name = item.Name,
                         Price = item.Price,
                         Size = item.Size
@@ -59,7 +60,7 @@ namespace DataBase
                             {
                                 Id = item.Id,
                                 Description = item.Description,
-                                Discounts = new List<IDiscount<int>>(),
+                                Discounts = new Dictionary<DiscountType, IDiscount<int>>(),
                                 Name = item.Name,
                                 Price = item.Price,
                                 Size = item.Size

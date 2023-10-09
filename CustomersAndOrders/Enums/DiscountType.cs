@@ -6,6 +6,7 @@
         OrderPrice,
         Birthday,
         Holiday,
-        ItemCount
+        ItemCount,
+        Item
     }
 }

@@ -9,6 +9,5 @@ namespace Core.Model
         {
             UserType = UserType.Customer;
         }
-
     }
 }
